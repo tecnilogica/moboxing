@@ -48,12 +48,12 @@ typedef enum
     
     defaults = [NSUserDefaults standardUserDefaults];
     
-    //if (![defaults boolForKey:@"USERDEFAULT_IS_INITIALIZED"]) {
+    if (![defaults boolForKey:@"USERDEFAULT_IS_INITIALIZED"]) {
         [defaults setBool:YES forKey:@"USERDEFAULT_IS_INITIALIZED"];
         [defaults setInteger:0 forKey:@"TOTAL_HIT_COUNTER"];
         [defaults setInteger:2 forKey:@"CENTS_PER_HIT"];
         [defaults synchronize];
-    //}
+    }
     
     centsPerHit = [defaults integerForKey:@"CENTS_PER_HIT"];
 
